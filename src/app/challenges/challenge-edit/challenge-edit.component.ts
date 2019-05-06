@@ -8,13 +8,6 @@ import { Component, OnInit, EventEmitter, Output} from '@angular/core';
 })
 export class ChallengeEditComponent implements OnInit {
 
-    @Output() input = new EventEmitter<string>();
-    challengeDescription = '';
-
-
-    onSetChallenge() {
-    this.input.emit(this.challengeDescription)
-    }
 
   constructor() { }
 

@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component } from "@angular/core";
 import {ItemEventData} from 'tns-core-modules/ui/list-view'
 
 @Component ({
@@ -8,7 +8,6 @@ import {ItemEventData} from 'tns-core-modules/ui/list-view'
     moduleId: module.id
 })
 export class CurrentChallengeComponent {
-    @Input() challengeTitle = '';
 
         onItemTap(args: ItemEventData) {
             console.log(args);

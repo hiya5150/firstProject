@@ -10,6 +10,7 @@ activeChallenge = '';
 
 onChallengeInput(challengeDescription: string) {
     this.activeChallenge = challengeDescription;
+    console.log(challengeDescription);
 }
 
 }
