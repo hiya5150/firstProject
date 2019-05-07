@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import {ItemEventData} from 'tns-core-modules/ui/list-view'
+import { RouterExtensions } from "nativescript-angular/router";
 
 @Component ({
     selector: 'ns-current-challenge',
@@ -8,10 +8,14 @@ import {ItemEventData} from 'tns-core-modules/ui/list-view'
     moduleId: module.id
 })
 export class CurrentChallengeComponent {
+    constructor(private router: RouterExtensions) {}
 
-        onItemTap(args: ItemEventData) {
-            console.log(args);
-
-        }
+    onEdit() {
+        this.router.navigate(['/edit-challenge'], {
+            transition: {name: 'slideLeft'}
+    });
 
 }
+
+}
+
