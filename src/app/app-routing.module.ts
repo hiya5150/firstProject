@@ -1,6 +1,8 @@
 import { NgModule } from "@angular/core";
 import {NativeScriptRouterModule} from 'nativescript-angular/router'
 import { Routes } from "@angular/router";
+import {NativeScriptUISideDrawerModule} from 'nativescript-ui-sidedrawer/angular/side-drawer-directives';
+
 import { AuthComponent } from "./auth/auth.component";
 import { TodayComponent } from "./challenges/today/today.component";
 import { CurrentChallengeComponent } from "./challenges/current-challenge/current-challenge.component";
@@ -19,7 +21,7 @@ const routes: Routes = [
             {path: 'current-challenge', component: CurrentChallengeComponent, outlet: 'currentChallenge'}
 
         ]}
-]
+];
 
 @NgModule({
     imports: [NativeScriptRouterModule.forRoot(routes)],
