@@ -1,4 +1,6 @@
 import { Component, OnInit, EventEmitter, Output} from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { PageRoute } from 'nativescript-angular/router';
 
 @Component({
   selector: 'ns-challenge-edit',
@@ -7,11 +9,20 @@ import { Component, OnInit, EventEmitter, Output} from '@angular/core';
   moduleId: module.id,
 })
 export class ChallengeEditComponent implements OnInit {
+    isCreating = true;
 
 
-  constructor() { }
+  constructor(private activatedRoute: ActivatedRoute, private pageRoute: PageRoute) { }
 
   ngOnInit() {
+    this.pageRoute.activatedRoute.subscribe(activatedRoute => {
+        activatedRoute.paramMap.subscribe(paramMap => {
+         if(!paramMap.has('mode')) {
+                this.isCreating = true;
+         } else {
+             this.isCreating = paramMap.get('mode') !== 'edit';
+         }
+         });
+      });
+    }
   }
-
-}
