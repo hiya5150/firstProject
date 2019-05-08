@@ -1,1 +1,9 @@
-<Button text="challenge-tabs works!" class="btn btn-primary"></Button>
+<TabView>
+<page-router-outlet *tabItem="{title: 'Today'}">
+    <Label text="Tab 1"></Label>
+</page-router-outlet>
+<page-router-outlet
+*tabItem="{title: 'Current Challenge'}">
+        <Label text="Tab 2"></Label>
+    </page-router-outlet>
+</TabView>
